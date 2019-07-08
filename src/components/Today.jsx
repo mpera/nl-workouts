@@ -1,13 +1,21 @@
 import React from 'react';
 import './Today.css';
 import timeGreeting from '../utilities/time-greeting.js';
+import randomMessage from '../utilities/random-message';
 import { Menu, Dropdown, Icon, Rate, Radio, Input, Button, Modal } from 'antd';
-import MenuItem from 'antd/lib/menu/MenuItem';
+// import MenuItem from 'antd/lib/menu/MenuItem';
+import { Redirect } from 'react-router-dom'
 const { TextArea } = Input;
 const { SubMenu } = Menu;
 
+
 class Today extends React.Component {
-  state = { modalVisible: false };
+  state = {
+    modalVisible: false,
+    redirectData: false,
+    redirectCalendar: false,
+    message: 'Way to go!! 💪',
+  };
 
   showModal = () => {
     this.setState({
@@ -15,6 +23,35 @@ class Today extends React.Component {
     });
   };
 
+  hideModal = () => {
+    this.setState({
+      modalVisible: false,
+    });
+  };
+
+  goToCalendar = () => {
+    this.setState({
+      redirectCalendar: true,
+    });
+  };
+
+  goToData = () => {
+    this.setState({
+      redirectData: true,
+    });
+  };
+
+  renderCalendar = () => {
+    if (this.state.redirectCalendar) {
+      return <Redirect to='/calendar' />
+    };
+  };
+
+  renderData = () => {
+    if (this.state.redirectData) {
+      return <Redirect to='/data' />
+    };
+  };
 
   render() {
     const workoutTypes = ['Track', 'Lifting', 'Throwing', 'Pod'];
@@ -80,24 +117,25 @@ class Today extends React.Component {
           </div>
         </div>
         <div className='row'>
+          {this.renderCalendar()}
+          {this.renderData()}
           <Button type='primary' size='large' onClick={this.showModal}>Submit</Button>
           <Modal
-            title="Successfully logged!"
+            title="Successfully logged"
             visible={this.state.modalVisible}
-            onOk={this.goToCalendar}
-            onCancel={this.goToData}
-            okButtonProps={{}}
-            cancelButtonProps={{}}
+            closable={false}
+            //okButtonProps={{}}
+            //cancelButtonProps={{}}
             footer={[
               <Button onClick={this.goToCalendar}>
-                Go to calendar
+                View calendar
               </Button>,
               <Button onClick={this.goToData}>
-                Go to data
+                See your data
               </Button>
             ]}
           >
-
+            <p className='modal'>{randomMessage()}</p>
           </Modal>
         </div>
       </React.Fragment >
