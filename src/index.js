@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
 import App from './App';
-import Calendar from './components/Calendar.jsx';
+import Plan from './components/Plan.jsx';
 import Data from './components/Data.jsx';
-import Today from './components/Today.jsx';
+import Log from './components/Log.jsx';
 import NavigationBar from './components/NavigationBar.jsx';
 import * as serviceWorker from './serviceWorker';
 
@@ -13,9 +13,9 @@ const routing = (
     <Router>
         <div>
             <NavigationBar />
-            <Route exact path="/" component={Today} />
-            <Route path="/today" component={Today} />
-            <Route path="/calendar" component={Calendar} />
+            <Route exact path="/" component={Log} />
+            <Route path="/log" component={Log} />
+            <Route path="/plan" component={Plan} />
             <Route path="/data" component={Data} />
         </div>
     </Router>

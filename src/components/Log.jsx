@@ -1,18 +1,17 @@
 import React from 'react';
-import './Today.css';
+import './Log.css';
 import timeGreeting from '../utilities/time-greeting.js';
 import randomMessage from '../utilities/random-message';
 import { Menu, Dropdown, Icon, Rate, Radio, Input, Button, Modal } from 'antd';
-// import MenuItem from 'antd/lib/menu/MenuItem';
 import { Redirect } from 'react-router-dom'
 const { TextArea } = Input;
 const { SubMenu } = Menu;
 
 
-class Today extends React.Component {
+class Log extends React.Component {
   state = {
     modalVisible: false,
-    redirectTo: '/today',
+    redirectTo: '/log',
     message: 'Way to go!! 💪',
   };
 
@@ -28,9 +27,9 @@ class Today extends React.Component {
     });
   };
 
-  goToCalendar = () => {
+  goToPlan = () => {
     this.setState({
-      redirectTo: '/calendar',
+      redirectTo: '/plan',
     });
   };
 
@@ -119,8 +118,8 @@ class Today extends React.Component {
             //okButtonProps={{}}
             //cancelButtonProps={{}}
             footer={[
-              <Button onClick={this.goToCalendar}>
-                View calendar
+              <Button onClick={this.goToPlan}>
+                See your plan
               </Button>,
               <Button onClick={this.goToData}>
                 See your data
@@ -135,4 +134,4 @@ class Today extends React.Component {
   }
 }
 
-export default Today;
+export default Log;
