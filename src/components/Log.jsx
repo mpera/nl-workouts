@@ -63,7 +63,7 @@ class Log extends React.Component {
 
     return (
       <React.Fragment>
-        <h1 className='welcomeMessage'> {timeGreeting()}, Beara! ❤️ </h1>
+        <h1 className='welcomeMessage'> {timeGreeting()}, Boots! ❤️ </h1>
         <div className='row'>
           <div className='questionText'>
             What did you do?
