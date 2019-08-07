@@ -12,8 +12,8 @@ import * as serviceWorker from './serviceWorker';
 const routing = (
     <Router>
         <div>
-            <NavigationBar/>
-            {/* <Route exact path="/" component={App} /> */}
+            <NavigationBar />
+            <Route exact path="/" component={Today} />
             <Route path="/today" component={Today} />
             <Route path="/calendar" component={Calendar} />
             <Route path="/data" component={Data} />

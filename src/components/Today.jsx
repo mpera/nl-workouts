@@ -12,8 +12,7 @@ const { SubMenu } = Menu;
 class Today extends React.Component {
   state = {
     modalVisible: false,
-    redirectData: false,
-    redirectCalendar: false,
+    redirectTo: '/today',
     message: 'Way to go!! 💪',
   };
 
@@ -31,26 +30,19 @@ class Today extends React.Component {
 
   goToCalendar = () => {
     this.setState({
-      redirectCalendar: true,
+      redirectTo: '/calendar',
     });
   };
 
   goToData = () => {
     this.setState({
-      redirectData: true,
+      redirectTo: '/data',
     });
   };
 
-  renderCalendar = () => {
-    if (this.state.redirectCalendar) {
-      return <Redirect to='/calendar' />
-    };
-  };
-
-  renderData = () => {
-    if (this.state.redirectData) {
-      return <Redirect to='/data' />
-    };
+  renderPage = () => {
+    console.log(this.state.redirectTo);
+    return <Redirect to={this.state.redirectTo} />
   };
 
   render() {
@@ -117,13 +109,13 @@ class Today extends React.Component {
           </div>
         </div>
         <div className='row'>
-          {this.renderCalendar()}
-          {this.renderData()}
+          {this.renderPage()}
           <Button type='primary' size='large' onClick={this.showModal}>Submit</Button>
           <Modal
             title="Successfully logged"
             visible={this.state.modalVisible}
-            closable={false}
+            closable={true}
+            onCancel={this.hideModal}
             //okButtonProps={{}}
             //cancelButtonProps={{}}
             footer={[
