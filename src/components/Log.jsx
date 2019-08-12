@@ -31,12 +31,14 @@ class Log extends React.Component {
     this.setState({
       redirectTo: '/plan',
     });
+    this.props.navBarChange('plan');
   };
 
   goToData = () => {
     this.setState({
       redirectTo: '/data',
     });
+    this.props.navBarChange('data');
   };
 
   renderPage = () => {
