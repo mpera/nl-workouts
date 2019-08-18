@@ -1,19 +1,71 @@
-[debug] [2019-08-08T22:30:17.545Z] ----------------------------------------------------------------------
-[debug] [2019-08-08T22:30:17.546Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login --reauth
-[debug] [2019-08-08T22:30:17.547Z] CLI Version:   7.2.2
-[debug] [2019-08-08T22:30:17.547Z] Platform:      darwin
-[debug] [2019-08-08T22:30:17.547Z] Node Version:  v11.12.0
-[debug] [2019-08-08T22:30:17.547Z] Time:          Thu Aug 08 2019 15:30:17 GMT-0700 (Pacific Daylight Time)
-[debug] [2019-08-08T22:30:17.547Z] ----------------------------------------------------------------------
+[debug] [2019-08-17T22:54:31.399Z] ----------------------------------------------------------------------
+[debug] [2019-08-17T22:54:31.401Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login --reauth
+[debug] [2019-08-17T22:54:31.401Z] CLI Version:   7.2.2
+[debug] [2019-08-17T22:54:31.401Z] Platform:      darwin
+[debug] [2019-08-17T22:54:31.401Z] Node Version:  v11.12.0
+[debug] [2019-08-17T22:54:31.402Z] Time:          Sat Aug 17 2019 15:54:31 GMT-0700 (Pacific Daylight Time)
+[debug] [2019-08-17T22:54:31.402Z] ----------------------------------------------------------------------
 [debug] 
 [info] 
 [info] Visit this URL on any device to log in:
-[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=933957976&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=448246749&redirect_uri=http%3A%2F%2Flocalhost%3A9005
 [info] 
 [info] Waiting for authentication...
-[debug] [2019-08-08T22:30:23.847Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+[debug] [2019-08-17T22:54:42.527Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
 
-[debug] [2019-08-08T22:30:23.949Z] Token Fetch Error: FirebaseError: Server Error. self signed certificate in certificate chain
+[debug] [2019-08-17T22:54:42.683Z] Token Fetch Error: FirebaseError: Server Error. self signed certificate in certificate chain
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:30:31)
+    at self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:197:13)
+    at Request.EventEmitter.emit (domain.js:481:20)
+    at Request.onRequestError (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:881:8)
+    at ClientRequest.emit (events.js:197:13)
+    at ClientRequest.EventEmitter.emit (domain.js:481:20)
+    at TLSSocket.socketErrorListener (_http_client.js:397:9)
+    at TLSSocket.emit (events.js:197:13)
+    at TLSSocket.EventEmitter.emit (domain.js:481:20)
+[debug] [2019-08-17T22:57:16.063Z] ----------------------------------------------------------------------
+[debug] [2019-08-17T22:57:16.065Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login
+[debug] [2019-08-17T22:57:16.065Z] CLI Version:   7.2.2
+[debug] [2019-08-17T22:57:16.065Z] Platform:      darwin
+[debug] [2019-08-17T22:57:16.065Z] Node Version:  v11.12.0
+[debug] [2019-08-17T22:57:16.066Z] Time:          Sat Aug 17 2019 15:57:16 GMT-0700 (Pacific Daylight Time)
+[debug] [2019-08-17T22:57:16.066Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=442386810&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2019-08-17T22:57:25.429Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+
+[debug] [2019-08-17T22:57:25.656Z] Token Fetch Error: FirebaseError: Server Error. self signed certificate in certificate chain
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:30:31)
+    at self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:197:13)
+    at Request.EventEmitter.emit (domain.js:481:20)
+    at Request.onRequestError (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:881:8)
+    at ClientRequest.emit (events.js:197:13)
+    at ClientRequest.EventEmitter.emit (domain.js:481:20)
+    at TLSSocket.socketErrorListener (_http_client.js:397:9)
+    at TLSSocket.emit (events.js:197:13)
+    at TLSSocket.EventEmitter.emit (domain.js:481:20)
+[debug] [2019-08-17T23:04:25.255Z] ----------------------------------------------------------------------
+[debug] [2019-08-17T23:04:25.257Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login:ci
+[debug] [2019-08-17T23:04:25.257Z] CLI Version:   7.2.2
+[debug] [2019-08-17T23:04:25.257Z] Platform:      darwin
+[debug] [2019-08-17T23:04:25.257Z] Node Version:  v11.12.0
+[debug] [2019-08-17T23:04:25.258Z] Time:          Sat Aug 17 2019 16:04:25 GMT-0700 (Pacific Daylight Time)
+[debug] [2019-08-17T23:04:25.258Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=216342353&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2019-08-17T23:04:42.876Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+
+[debug] [2019-08-17T23:04:43.024Z] Token Fetch Error: FirebaseError: Server Error. self signed certificate in certificate chain
     at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:30:31)
     at self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
     at Request.emit (events.js:197:13)

@@ -4,6 +4,7 @@ import timeGreeting from '../utilities/time-greeting.js';
 import randomMessage from '../utilities/random-message';
 import { Menu, Dropdown, Icon, Rate, Radio, Input, Button, Modal } from 'antd';
 import { Redirect } from 'react-router-dom'
+import { db } from "../firebase.js"
 const { TextArea } = Input;
 const { SubMenu } = Menu;
 
@@ -15,7 +16,24 @@ class Log extends React.Component {
     message: 'Way to go!! 💪',
   };
 
-  showModal = () => {
+  onSubmit = () => {
+    // store new entry
+    var ref = db.ref();
+    var entries = ref.child("entries");
+    var newEntryKey = entries.push().key;
+    var entryData = {
+      bodyAssessment: "",
+      dateCompleted: null,
+      notes: "yay!",
+      rating: 5,
+      userId: "",
+      workoutId: "",
+    }
+    var updates = {};
+    updates['/entries/' + newEntryKey] = entryData;
+    console.log(ref.update(updates));
+
+    // show modal
     this.setState({
       modalVisible: true,
     });
@@ -111,7 +129,7 @@ class Log extends React.Component {
         </div>
         <div className='row'>
           {this.renderPage()}
-          <Button type='primary' size='large' onClick={this.showModal}>Submit</Button>
+          <Button type='primary' size='large' onClick={this.onSubmit}>Submit</Button>
           <Modal
             title="Successfully logged"
             visible={this.state.modalVisible}

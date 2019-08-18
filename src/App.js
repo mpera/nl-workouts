@@ -9,6 +9,7 @@ import Log from './components/Log.jsx';
 import NavigationBar from './components/NavigationBar.jsx';
 import * as serviceWorker from './serviceWorker';
 
+
 class App extends React.Component {
   state = {
     current: 'log',
